@@ -10,11 +10,8 @@
   <img src="https://img.shields.io/badge/Stack-Power%20BI%20%2B%20Python%20%2B%20Figma-6ab4f5?style=for-the-badge&labelColor=1a1a1a" />
 </div>
 
-<br/>
 
 ---
-
-## 📌 About
 
 Este é um projeto de análise de comércio exterior do Brasil, desenvolvido com Power BI e Python. O foco é uma visualização clara e interativa dos dados de exportação e importação brasileiros em 2025, com fidelidade visual e atenção aos detalhes de UX em dashboards.
 
@@ -28,9 +25,9 @@ Este é um projeto de análise de comércio exterior do Brasil, desenvolvido com
 - Top 5 produtos exportados e importados
 - Design dark com paleta coesa e tipografia clara
 
----
+<br>
 
-## 🛠 Process
+## Process
 
 **1. Data Collection**
 Coleta e limpeza dos dados via Python (pandas), consumindo fontes públicas do Ministério da Economia.
@@ -39,40 +36,27 @@ Coleta e limpeza dos dados via Python (pandas), consumindo fontes públicas do M
 Modelagem no Power BI com relacionamentos entre tabelas de produtos, países e regiões.
 
 **3. Visual Design**
-Prototipação no Figma antes da implementação — definição de paleta, tipografia e layout de cards.
+Prototipação no Figma antes da implementação — definição de paleta, tipografia e layout.
 
 **4. Dashboard Build**
-Construção dos visuais no Power BI com customizações via Python visuals e formatação condicional.
+Construção dos visuais no Power BI com tema customizado, e formatação condicional.
 
----
+<br>
 
-## 🎬 Demo
+## Demo
 
 <div align="center">
   <img src="assets/demo.gif" alt="Project Demo" width="80%" />
 </div>
 
-> Sem vídeo ainda? Substitua por um link:
-> [▶ Watch on YouTube](https://youtube.com)
+<br>
 
----
+## Structure
 
-## 📁 Structure
+<br>
 
-```
-📦 project-name
- ┣ 📂 data
- ┃ ┗ 📄 raw_data.csv
- ┣ 📂 scripts
- ┃ ┗ 📄 data_cleaning.py
- ┣ 📂 assets
- ┃ ┗ 📄 demo.gif
- ┣ 📄 dashboard.pbix
- ┗ 📄 README.md
-```
 
----
 
 <div align="center">
-  <img src="assets/footer-dark.png" alt="Footer" width="100%" />
+  <img src="assets/footer-light.png" alt="Footer" width="100%" />
 </div>
