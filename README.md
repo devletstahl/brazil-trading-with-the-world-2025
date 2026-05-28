@@ -17,7 +17,7 @@ So I decided to change that. I wanted something simple enough to not take foreve
 I also have a background in international business. I used to constantly look up import/export data, consult [Apex Brasil](https://apexbrasil.com.br) dashboards, and build presentations around trade flows. It's a topic I genuinely like. So when I came across a clean, minimalist infographic on Pinterest showing trade data for a country, the idea clicked: let's build a Brazilian version of that in Power BI.
 
 <div align="left">
-  <img src="assets/inspo.png" alt="Inspiration" width="50%" />
+  <img src="assets/inspo.jpg" alt="Inspiration" width="50%" />
 </div>
 
 <br/>
@@ -118,21 +118,10 @@ This is where the dashboard goes beyond the original infographic. I added 5 cust
 - Main products traded
 - Market share
 - Trade balance
-<br/>
 
 <div align="left">
-  <img src="assets/demo2.gif" alt="Inspiration" width="50%" />
+  <img src="assets/demo2.gif" alt="Tooltips" width="50%" />
 </div>
-
-<br/>
-
-## ✦ How to Use
-
-Due to the map visual license, this dashboard is not available for web viewing. You can download the `.pbix` file and explore it locally in Power BI Desktop.
-
-1. Clone or download this repository
-2. Open `brazil-trading.pbix` in Power BI Desktop
-3. Explore the dashboard: hover over countries and states to see the tooltips in action
 
 <br/>
 
@@ -153,6 +142,24 @@ brazil-trading-with-the-world-2025/
 └── README.md
 ```
 <br/>
+
+## ✦ How to Use
+
+Due to the map visual license, this dashboard is not available for web viewing. You can download the `.pbix` file and explore it locally in Power BI Desktop.
+
+1. Clone or download this repository
+2. Open `brazil-trading.pbix` in Power BI Desktop
+3. Explore the dashboard: hover over countries and states to see the tooltips in action
+4. Make it yours: swap the data for another country, adjust the color theme, or extend the visuals however you like
+
+<br/>
+
+## ✦ License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use it, adapt it, and make it your own.
+
+If you build something inspired by this project, I'd love to see it. Credit is appreciated but not required.
+
 
 ---
 
