@@ -5,22 +5,56 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Status-Completed-4ade80?style=for-the-badge&labelColor=1a1a1a" />
   &nbsp;
-  <img src="https://img.shields.io/badge/Stack-Power%20BI%20%2B%20Python%20%2B%20Figma-6ab4f5?style=for-the-badge&labelColor=1a1a1a" />
+  <img src="https://img.shields.io/badge/Stack-Power%20BI%20%2B%20Python%20%2B%20Figman%20%2B%20Claude MCP-6ab4f5?style=for-the-badge&labelColor=1a1a1a" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Type-BI%20%2B%20Business%20Analysis-a78bfa?style=for-the-badge&labelColor=1a1a1a" />
 </div>
 
 ---
 
-When you work with data every day, it's easy to get so focused on work projects that your personal portfolio ends up empty. That's exactly what happened to me. I had built around 5 to 10 dashboards at work this year, but not a single one for myself.
+## ✦ Business Context
 
-So I decided to change that. I wanted something simple enough to not take forever to build, but still complete, informative, and built with more than one tool.
+Brazil is one of the world's top commodity exporters, yet professionals who work with trade data (analysts, consultants, procurement managers) often rely on fragmented government platforms that require significant technical familiarity to extract insights.
 
-I also have a background in international business. I used to constantly look up import/export data, consult [Apex Brasil](https://apexbrasil.com.br) dashboards, and build presentations around trade flows. It's a topic I genuinely like. So when I came across a clean, minimalist infographic on Pinterest showing trade data for a country, the idea clicked: let's build a Brazilian version of that in Power BI.
+**The problem:** existing dashboards from sources like Comex Stat and Apex Brasil are functional but not designed for fast, executive-level decision-making. A manager who needs to answer "which are our top 5 export markets this year, and how does São Paulo's share compare to the South region?" must navigate multiple screens, apply filters manually, and mentally connect the pieces.
 
-<div align="left">
-  <img src="assets/inspo.jpg" alt="Inspiration" width="50%" />
-</div>
+**The question this project answers:** Can a single-page interactive dashboard give a trade analyst or business manager a complete picture of Brazil's 2025 trade flows (by product, state, and partner country) in under 30 seconds of interaction?
 
-<br/>
+### Key Business Questions
+
+| # | Question | Visual |
+|---|----------|--------|
+| 1 | What is Brazil's overall trade balance in 2025? | KPI cards |
+| 2 | Which are the top 5 export and import partner countries? | Bar charts |
+| 3 | How are trade flows distributed across Brazilian states and regions? | Interactive map |
+| 4 | Which product categories dominate exports and imports? | Bar charts (SH2) |
+| 5 | For a given country or state, what is the product mix and market share? | Custom tooltips |
+
+### Stakeholders & Use Cases
+
+| Stakeholder | Primary need |
+|---|---|
+| Export/import analyst | Quick overview of trade flows without manual data extraction |
+| Business development manager | Identify top partner countries to prioritize |
+| Comex consultant | Benchmark state performance and product category trends |
+| Student / researcher | Accessible, documented dataset for academic analysis |
+
+---
+
+## ✦ Solution Design
+
+Before writing a single line of code or opening Power BI, I defined the scope: one page, five core questions, executive-friendly layout. <br>
+That constraint shaped every decision that followed, including data model, visual types, color palette, and tooltip depth.
+
+The design process followed three stages:
+
+1. **Define scope** — establish the business questions and the minimum viable answer for each
+2. **Model the data** — build a star schema that supports filtering by country, state, and product without performance issues
+3. **Design the experience** — mockup in Figma first, then build in Power BI to match
+
+This order matters. Starting with visuals before defining the questions leads to dashboards that look good but don't answer anything specific.
+
+---
 
 ## ✦ Features
 
@@ -34,7 +68,7 @@ I also have a background in international business. I used to constantly look up
   <img src="assets/demo.gif" alt="Demo" width="50%" />
 </div>
 
-<br/>
+---
 
 ## ✦ Getting the Data
 
@@ -51,7 +85,7 @@ The datasets used in this project:
 | `NCM.csv` | Product classification (NCM) |
 | `NCM_SH.csv` | SH product hierarchy |
 
-<br/>
+---
 
 ## ✦ Transforming the Data
 
@@ -75,7 +109,7 @@ Data cleaning and preparation were done in Python with pandas. Here's what was a
   <img src="assets/datamodel.gif" alt="Data Model" width="50%" />
 </div>
 
-<br/>
+---
 
 ## ✦ Deciding the Theme
 
@@ -83,7 +117,7 @@ Before building anything, I explored color patterns using [Power BI Studio](http
 
 You can find the theme file at `design/Custom Theme.json` and apply it under **View > Themes > Browse for themes**.
 
-<br/>
+---
 
 ## ✦ Creating the Mockup in Figma
 
@@ -91,7 +125,7 @@ Figma was used only to build the background and plan the layout, deciding where 
 
 The original background file is available at `design/background.png`.
 
-<br/>
+---
 
 ## ✦ Building the Visuals in Power BI
 
@@ -103,17 +137,17 @@ Visuals were designed following the reference infographic, using built-in Power 
 
 I used a Projection Map for Brazil, with states colored by region: North, Northeast, Midwest, Southeast, South, and Federal District.
 
-<br/>
+---
 
 ## ✦ Optimizing Labels with Claude MCP
 
 The SH2 product names were too long to display cleanly in bar and column charts. To fix this, I used the **Claude Modeling MCP** to generate short English versions of each SH2 category, making the visuals easier to read without losing meaning.
 
-<br/>
+---
 
 ## ✦ Adding Context with Tooltips
 
-This is where the dashboard goes beyond the original infographic. I added 5 custom tooltips to give more context when hovering over countries and states, showing:
+I added 5 custom tooltips to give more context when hovering over countries and states, showing:
 
 - Main products traded
 - Market share
@@ -123,7 +157,26 @@ This is where the dashboard goes beyond the original infographic. I added 5 cust
   <img src="assets/demo2.gif" alt="Tooltips" width="50%" />
 </div>
 
-<br/>
+---
+
+## ✦ Decisions & Trade-offs
+
+Every project involves constraints. Here's what I chose and why:
+
+| Decision | Chosen | Discarded | Reason |
+|---|---|---|---|
+| Page layout | Single-page | Multi-page | Executive use case requires speed; one glance, full picture |
+| Product granularity | SH2 (broad category) | NCM (8-digit) | SH2 readable in bar charts; NCM produces 9,000+ items |
+| Map type | Projection map (3rd party) | Built-in filled map | Built-in doesn't support state-level Brazil well |
+| Color palette | Dark neutral | Brazilian flag colors | Data-first: colors shouldn't carry meaning unless intentional |
+| Label optimization | AI-assisted (Claude MCP) | Manual editing | 99 SH2 categories × 2 languages = impractical to do manually |
+
+**Known limitations:**
+- Data reflects Jan–Apr 2025 (partial year); full-year comparisons are not yet possible
+- The `.pbix` file cannot be published online due to the map visual license
+- FOB values exclude freight and insurance costs, which affects import comparison accuracy
+
+---
 
 ## ✦ Repository Structure
 
@@ -141,7 +194,8 @@ brazil-trading-with-the-world-2025/
 ├── brazil-trading.pbix      # Power BI file
 └── README.md
 ```
-<br/>
+
+---
 
 ## ✦ How to Use
 
@@ -152,14 +206,13 @@ Due to the map visual license, this dashboard is not available for web viewing. 
 3. Explore the dashboard: hover over countries and states to see the tooltips in action
 4. Make it yours: swap the data for another country, adjust the color theme, or extend the visuals however you like
 
-<br/>
+---
 
 ## ✦ License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use it, adapt it, and make it your own.
 
 If you build something inspired by this project, I'd love to see it. Credit is appreciated but not required.
-
 
 ---
 
