@@ -67,6 +67,7 @@ Grain is SH2 (2-digit Harmonized System), not the full 8-digit NCM. NCM has ~13,
 | Layout | Single page over multi-page | Every question answerable without a page switch; kept it to a 16:9 executive-presentation frame |
 | Product grain | SH2 over 8-digit NCM | ~99 readable categories vs ~13,000 unchartable codes |
 | Labels | Claude MCP-assisted rename | 99 category labels, PT + EN, by hand would've been the slowest part of the build |
+| Theme | Dark neutral over flag-colored | Flag colors as a palette fight the data itself for attention |
 
 ## Repo structure
 
